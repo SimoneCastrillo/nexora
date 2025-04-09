@@ -5,7 +5,7 @@ const Planos = () => {
     return (
         <div className="bg-gray-50">
             <Header />
-            <div className="flex flex-col h-[80vh] items-center gap-8 p-4">
+            <div className="flex flex-col min-h-[80vh] items-center gap-8 p-4">
                 <h1 className="text-4xl font-bold text-[#022946] mt-4">Planos</h1>
 
                 <div className="flex flex-col md:flex-row gap-6 mt-6 items-start">
@@ -22,7 +22,7 @@ const Planos = () => {
                             </ul>
 
                         </div>
-                        <button className="bg-[#022946] font-bold text-white px-4 py-2 rounded-lg hover:bg-[#034066] transition mt-4">
+                        <button className="bg-[#022946] font-bold text-white px-4 py-2 rounded-lg hover:bg-[#034066] transition mt-4 cursor-pointer">
                             Adquirir agora
                         </button>
                     </div>
@@ -40,7 +40,7 @@ const Planos = () => {
                             </ul>
 
                         </div>
-                        <button className="bg-[#0071c8] font-bold text-white px-4 py-2 rounded-lg hover:bg-[#034066] transition mt-4">
+                        <button className="bg-[#0071c8] font-bold text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-[#034066] transition mt-4">
                             Adquirir agora
                         </button>
                     </div>
