@@ -16,3 +16,8 @@ input, select {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+.classNameInput {
+  border-radius: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}

@@ -14,23 +14,20 @@ function Home() {
   const [isFiltroAberto, setIsFiltroAberto] = useState(false);
   const handleResultPesquisa = () => {
     const buffetsFiltrados = json_bufet.filter((buffet) =>
-      buffet.name.toLowerCase().includes(nomePesquisa.toLowerCase())
+      buffet.buffetId.nome.toLowerCase().includes(nomePesquisa.toLowerCase())
     );
     return buffetsFiltrados;
   }
   useEffect(() => {
     const asyncBuffet = async () => {
       const buffets = await buscarBuffets();
-      setJson_bufet(buffets);
-      setBuffetsExibir(buffets);
-      console.log("buffets", buffets);
+      setJson_bufet(buffets.data);
+      setBuffetsExibir(buffets.data);
+      console.log("buffets", buffets.data);
     };
     asyncBuffet();
   }, []);
   
-  useEffect(() => {
-    console.log("para exibir",json_bufet)
-  }, [buffetsExibir])
   return (
     <div className="bg-gray-50">
       <Header />
@@ -44,12 +41,12 @@ function Home() {
               <input type="text" placeholder="Procure por nome do buffet"
                 value={nomePesquisa}
                 onChange={(e) => setNomePesquisa(e.target.value)}
-                className="w-[95%] rounded-tl-md rounded-bl-md bg-[#f2f2f2] px-4 py-2 outline-none" />
+                className="classNameInput w-[95%] rounded-l-md bg-[#f2f2f2] px-4 py-2 outline-none border border-gray-300" />
               <button
                 onClick={() => {
                   setBuffetsExibir(handleResultPesquisa())
                 }}
-                className="bg-[#022946] text-white font-bold text-[14px] flex justify-center items-center w-[5%] py-[7.3px] rounded-tr-md rounded-br-md cursor-pointer"><MdSearch size={25} /></button>
+                className="bg-[#022946] text-white font-bold text-[14px] flex justify-center items-center w-[5%] py-[10px] rounded-tr-md rounded-br-md cursor-pointer"><MdSearch size={25} /></button>
             </div>
           </div>
           <div className="flex justify-end relative">
@@ -59,7 +56,7 @@ function Home() {
               Busca por outros filtros
             </button>
             {isFiltroAberto && (
-              <Filtro />
+              <Filtro onBuffets={json_bufet} onSetExibirBuffets={setBuffetsExibir} />
             )}
           </div>
         </div>

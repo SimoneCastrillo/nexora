@@ -41,34 +41,12 @@ const cadastrarEndereco = async (endereco) => {
 const buscarBuffets = async () => {
     const apiInstance = api();
     const token = sessionStorage.getItem('token');
-
-    try {
-        const { data: buffets } = await apiInstance.get('/buffets', {
+        return await apiInstance.get('/enderecos', {
             headers: {
                 "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json",
             },
         });
-        console.log(buffets)
-        const { data: enderecos } = await apiInstance.get('/enderecos', {
-            headers: {
-                "Authorization": `Bearer ${token}`,
-                "Content-Type": "application/json",
-            },
-        });
-        console.log(enderecos)
-
-        const buffetComEndereco = buffets.map((buffet) => {
-            const enderecoBuffet = enderecos.find(end => end.buffetId === buffet.id);
-            return { ...buffet, endereco: enderecoBuffet || {} };
-        });
-        console.log("com endereco",buffetComEndereco)
-
-        return buffetComEndereco;
-    } catch (error) {
-        console.error("Erro ao buscar buffets ou endereços:", error);
-        return [];
-    }
 };
 
 export { logar, cadastrarBuffet, cadastrarEndereco, buscarBuffets };
