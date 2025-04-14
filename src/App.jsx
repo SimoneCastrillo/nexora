@@ -3,11 +3,13 @@ import Home from './pages/Home';
 import Sobre from './pages/Sobre';
 import Planos from './pages/Planos';
 import Admin from './pages/Admin';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
   return (
     <Router>
+      <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sobre" element={<Sobre />} />

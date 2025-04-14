@@ -1,55 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/Header/Header";
 import { MdSearch } from "react-icons/md";
 import CardBuffet from "../components/CardBuffet/CardBuffet";
 import Footer from "../components/Footer/Footer";
 import Filtro from "../components/Filtro/Filtro";
-const json_bufet = [
-  {
-    "id": 1,
-    "name": "Buffet A",
-    "description": "Buffet A é conhecido por sua comida deliciosa e atendimento excepcional.",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5x6oH_iKND6JPLEXzOiTjGoTnCn44JsI8Fw&s",
-    "link": "https://example.com/buffet-a",
-    "endereco": "endereço de teste"
-  },
-  {
-    "id": 2,
-    "name": "Buffet B",
-    "description": "Buffet B oferece uma variedade de pratos para atender a todos os gostos.",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5x6oH_iKND6JPLEXzOiTjGoTnCn44JsI8Fw&s",
-    "link": "https://example.com/buffet-a",
-    "endereco": "endereço de teste"
-  },
-  {
-    "id": 3,
-    "name": "Buffet C",
-    "description": "Buffet C é especializado em eventos corporativos e festas de casamento.",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5x6oH_iKND6JPLEXzOiTjGoTnCn44JsI8Fw&s",
-    "link": "https://example.com/buffet-a",
-    "endereco": "endereço de teste"
-  }
-  ,
-  {
-    "id": 4,
-    "name": "Buffet C",
-    "description": "Buffet C é especializado em eventos corporativos e festas de casamento.",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5x6oH_iKND6JPLEXzOiTjGoTnCn44JsI8Fw&s",
-    "link": "https://example.com/buffet-a",
-    "endereco": "endereço de teste"
-  },
-  {
-    "id": 5,
-    "name": "Buffet C",
-    "description": "Buffet C é especializado em eventos corporativos e festas de casamento.",
-    "price": 1500,
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5x6oH_iKND6JPLEXzOiTjGoTnCn44JsI8Fw&s",
-    "link": "https://example.com/buffet-a",
-    "endereco": "endereço de teste"
-  }
-];
+import { buscarBuffets } from "../api/api";
+
 function Home() {
-  const [buffetsExibir, setBuffetsExibir] = useState(json_bufet);
+  
+  const [json_bufet, setJson_bufet] = useState([])
+  const [buffetsExibir, setBuffetsExibir] = useState([]);
   const [nomePesquisa, setNomePesquisa] = useState('');
   const [isFiltroAberto, setIsFiltroAberto] = useState(false);
   const handleResultPesquisa = () => {
@@ -58,6 +18,19 @@ function Home() {
     );
     return buffetsFiltrados;
   }
+  useEffect(() => {
+    const asyncBuffet = async () => {
+      const buffets = await buscarBuffets();
+      setJson_bufet(buffets);
+      setBuffetsExibir(buffets);
+      console.log("buffets", buffets);
+    };
+    asyncBuffet();
+  }, []);
+  
+  useEffect(() => {
+    console.log("para exibir",json_bufet)
+  }, [buffetsExibir])
   return (
     <div className="bg-gray-50">
       <Header />
