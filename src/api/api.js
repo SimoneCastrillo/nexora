@@ -40,11 +40,9 @@ const cadastrarEndereco = async (endereco) => {
 
 const buscarBuffets = async () => {
     const apiInstance = api();
-    const token = sessionStorage.getItem('token');
         return await apiInstance.get('/enderecos', {
             headers: {
-                "Authorization": `Bearer ${token}`,
-                "Content-Type": "application/json",
+                "Content-Type": "application/json"
             },
         });
 };

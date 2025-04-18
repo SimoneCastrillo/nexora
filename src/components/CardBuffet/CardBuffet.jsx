@@ -29,7 +29,7 @@
         <div className="flex flex-col justify-between gap-2 w-full">
         <h2 className="text-xl font-bold text-center">{buffet.buffetId.nome}</h2>
         <h3 className="text-sm font-bold">{formatarTelefone(buffet.buffetId.telefone)}</h3>
-        {/* <p className="text-gray-600 break-words">dekadsdashudasuhduhsasdjasdnasdansdansdnsnadahudasuhdhuasuduaduasdunasduasuduasud</p> */}
+        <p className="text-gray-600 break-words">{buffet.buffetId.descricao}</p>
         <p className="text-sm  text-center">{`${buffet.rua}, ${buffet.numero} - ${buffet.cidade} - ${buffet.estado}`}</p>
         </div>
 

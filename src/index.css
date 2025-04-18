@@ -9,7 +9,7 @@ body {
   font-family: "Libre Franklin", sans-serif;
  }
 
-input, select {
+input, select, textarea {
   font-family: "Libre Franklin", sans-serif;
   font-size: 16px;
   padding: 10px;

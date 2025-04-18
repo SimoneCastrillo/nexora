@@ -48,6 +48,7 @@ const Admin = () => {
 
         const formData = new FormData();
         formData.append("imagem", buffet.imagem);
+        formData.append("descricao", buffet.descricao);
         formData.append("nome", buffet.nome);
         formData.append("email", buffet.email);
         formData.append("urlSite", buffet.urlSite);
@@ -79,6 +80,7 @@ const Admin = () => {
                 imagem: null,
                 nome: "",
                 telefone: "",
+                descricao: "",
                 urlSite: "",
                 email: "",
                 plano: ""
@@ -116,6 +118,12 @@ const Admin = () => {
                             <input type="file" name="imagem" onChange={handleBuffetChange} accept="image/*" />
                             <input type="text" name="nome" placeholder="Nome do Buffet" value={buffet.nome} onChange={handleBuffetChange} />
                             <input type="text" name="telefone" placeholder="Telefone" value={buffet.telefone} onChange={handleBuffetChange} />
+                            <textarea
+                                name="descricao"
+                                placeholder="Descrição"
+                                value={buffet.descricao}
+                                onChange={handleBuffetChange}
+                            />
                             <input type="email" name="email" placeholder="Email" value={buffet.email} onChange={handleBuffetChange} />
                             <input type="text" name="urlSite" placeholder="URL do Site" value={buffet.urlSite} onChange={handleBuffetChange} />
                             <select name="plano" value={buffet.plano} onChange={handleBuffetChange} className="border p-2 rounded">
