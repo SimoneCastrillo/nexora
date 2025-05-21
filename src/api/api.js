@@ -8,7 +8,7 @@ const api = () => {
 
 const logar = async (usuario) => {
     const apiInstance = api();
-    return await apiInstance.post('/usuarios/login', usuario, {
+    return await apiInstance.post('/usuarios/login/1', usuario, {
         headers: {
             'Content-Type': 'application/json',
         },

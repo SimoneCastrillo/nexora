@@ -2,6 +2,19 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
 const Planos = () => {
+    //funcao que redireciona par auma conversa no whatssap com o numero (11944878214) com uma mensagem pre montada
+    const redirecionarBasico = () => {
+        const numero = "+5511944878214";
+        const mensagem = "Olá, gostaria de adquirir o plano de divulgação.";
+        const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
+        window.open(url, "_blank");
+    };
+    const redirecionarSistema = () => {
+        const numero = "+5511944878214";
+        const mensagem = "Olá, gostaria de adquirir o plano sistema.";
+        const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
+        window.open(url, "_blank");
+    };
     return (
         <div className="bg-gray-50">
             <Header />
@@ -22,7 +35,7 @@ const Planos = () => {
                             </ul>
 
                         </div>
-                        <button className="bg-[#022946] font-bold text-white px-4 py-2 rounded-lg hover:bg-[#034066] transition mt-4 cursor-pointer">
+                        <button onClick={redirecionarBasico} className="bg-[#022946] font-bold text-white px-4 py-2 rounded-lg hover:bg-[#034066] transition mt-4 cursor-pointer">
                             Adquirir agora
                         </button>
                     </div>
@@ -40,7 +53,7 @@ const Planos = () => {
                             </ul>
 
                         </div>
-                        <button className="bg-[#0071c8] font-bold text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-[#034066] transition mt-4">
+                        <button onClick={redirecionarSistema} className="bg-[#0071c8] font-bold text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-[#034066] transition mt-4">
                             Adquirir agora
                         </button>
                     </div>

@@ -20,7 +20,7 @@
       return telefone;
     }
     return (
-      <a href={`https://${buffet.buffetId.urlSite}`} target="_blank" key={buffet.id} className="bg-white rounded-lg shadow-sm p-5">
+      <a href={`${buffet.buffetId.urlSite}`} target="_blank" key={buffet.id} className="bg-white rounded-lg shadow-sm p-5">
         <img
           src={`data:image/jpeg;base64,${buffet.buffetId.imagem}`}
           alt={buffet.buffetId.nome}
