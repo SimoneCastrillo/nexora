@@ -1,18 +1,9 @@
-FROM node:lts-alpine
-
+FROM node:18 AS builder
 WORKDIR /app
-
-# Copiar os arquivos necessários para instalar dependências
-COPY ["package.json", "package-lock.json*", "./"]
-
-# Instalar dependências
+COPY package*.json ./
 RUN npm install
-
-# Copiar o restante do projeto
 COPY . .
+RUN npm run build
 
-# Expor a porta 3000
-EXPOSE 3000
-
-# Iniciar o servidor de desenvolvimento
-CMD ["npm", "start"]
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
