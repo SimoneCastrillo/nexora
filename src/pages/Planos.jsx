@@ -1,5 +1,5 @@
-import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
 
 const Planos = () => {
     //funcao que redireciona par auma conversa no whatssap com o numero (11944878214) com uma mensagem pre montada
@@ -41,7 +41,7 @@ const Planos = () => {
                     </div>
                     <div className="bg-[#022946] shadow-xl rounded-2xl p-6 w-full md:w-[300px]  flex flex-col gap-5 border border-gray-200">
                         <div>
-                            <h2 className="text-2xl font-semibold text-[#ffff] mb-4">Plano Sistema</h2>
+                            <h2 className="text-2xl font-semibold text-[#ffff] mb-4">Plano Plataforma</h2>
                             <p className="text-gray-200 mb-6 text-sm">
                                 Perfeito para buffets que desejam dar um passo à frente. Criamos um sistema personalizado para gerenciar reservas, eventos e clientes — além de cuidar da divulgação completa para atrair mais público.
                             </p>

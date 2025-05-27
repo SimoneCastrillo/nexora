@@ -5,7 +5,6 @@ function Footer() {
                 <img
                     src="/src/assets/logo.png"
                     alt="Logo"
-                    className="h-8 filter invert brightness-0"
                 />
             </div>
             <p className="text-white text-center text-[12px] mt-2">Todos os direitos reservados &copy; 2025</p>
