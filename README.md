@@ -1,12 +1,40 @@
-# React + Vite
+# nexora  
+Aplicação web desenvolvida com React e Vite para alto desempenho e escalabilidade.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Visão Geral  
+Este repositório contém os arquivos e configurações necessários para o desenvolvimento e manutenção da aplicação web *nexora*. O projeto visa oferecer uma solução moderna e eficiente para usuários finais.
 
-Currently, two official plugins are available:
+## 📂 Estrutura do Repositório  
+- **src/**: Código-fonte da aplicação.  
+- **.github/workflows/**: Configuração de CI/CD para automação de deploy.  
+- **.env**: Arquivo de variáveis de ambiente.  
+- **dockerfile**: Configuração para containerização da aplicação.  
+- **README.md**: Documentação do projeto.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias Utilizadas  
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário dinâmicas.  
+- **Vite**: Ferramenta de build rápida para projetos React.  
+- **JavaScript**: Linguagem principal para desenvolvimento.  
+- **CSS**: Estilização da interface.  
+- **HTML**: Estruturação da aplicação.  
+- **Docker**: Containerização para facilitar deploy e escalabilidade.  
 
-## Expanding the ESLint configuration
+## 🔧 Como Usar  
+1. Clone o repositório:  
+   ```bash
+   git clone https://github.com/SimoneCastrillo/nexora.git
+2. Instale as dependências do projeto:
+   ```bash
+   cd nexora  
+   npm install
+3. Configure as variáveis de ambiente no arquivo .env.
+4. Inicie a aplicação localmente:
+   ```bash
+   npm run dev
+5. Acesse a aplicação no navegador em http://localhost:5173.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛡️Contribuição e Segurança
+- Certifique-se de seguir as melhores práticas de segurança ao lidar com credenciais.
+- Para contribuir, abra um PR com sua sugestão de melhoria.
+- Relate problemas via Issues no GitHub.
+
